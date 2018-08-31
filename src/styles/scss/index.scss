@@ -1,0 +1,71 @@
+@import 'Body';
+
+h2 {
+  font-size: 1.2em;
+  margin: 0em;
+}
+
+p {
+  margin: 0em;
+}
+
+.todo-color {
+  background-color: rgba(3, 169, 244, 0.3);
+}
+
+.todo-icon {
+  color: rgba(3, 169, 244, 1);
+}
+
+.question-color {
+  background-color: rgba(255, 235, 59, 0.3);
+}
+
+.question-icon {
+  color: #FFC107;
+}
+
+.blocked-color {
+  background-color: rgba(255, 152, 0, 0.3);
+}
+
+.blocked-icon {
+  color: rgba(255, 152, 0, 1);
+}
+
+.all-tasks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 60px;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+  min-width: 30%;
+  border: 1px solid #dcdcdc;
+}
+
+%task-row {
+  min-height: 40px;
+  padding: 5px;
+}
+
+.task-title {
+  @extend %task-row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-note {
+  @extend %task-row;
+  display: flex;
+  align-items: center;
+}
+
+.task-note > p {
+  padding-left: 5px;
+}

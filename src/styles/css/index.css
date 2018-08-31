@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin: 0em;
+}
+
+p {
+  margin: 0em;
+}
+
+.todo-color {
+  background-color: rgba(3, 169, 244, 0.3);
+}
+
+.todo-icon {
+  color: #03a9f4;
+}
+
+.question-color {
+  background-color: rgba(255, 235, 59, 0.3);
+}
+
+.question-icon {
+  color: #FFC107;
+}
+
+.blocked-color {
+  background-color: rgba(255, 152, 0, 0.3);
+}
+
+.blocked-icon {
+  color: #ff9800;
+}
+
+.all-tasks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 60px;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+  min-width: 30%;
+  border: 1px solid #dcdcdc;
+}
+
+.task-note, .task-title {
+  min-height: 40px;
+  padding: 5px;
+}
+
+.task-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-note {
+  display: flex;
+  align-items: center;
+}
+
+.task-note > p {
+  padding-left: 5px;
+}
+
+/*# sourceMappingURL=index.css.map */
