@@ -45,6 +45,7 @@ p {
   flex-direction: column;
   margin: 20px 0px;
   min-width: 30%;
+  height: 100%;
   border: 1px solid #dcdcdc;
 }
 
@@ -68,4 +69,14 @@ p {
 
 .task-note > p {
   padding-left: 5px;
+}
+
+.add-note:hover {
+  background-color: #f7f7f7;
+  transition: 0.25s;
+}
+
+.add-note:active {
+  background-color: #ffffff;
+  transition: 0.25s;
 }
