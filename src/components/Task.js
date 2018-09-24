@@ -8,7 +8,7 @@ const Task = props => {
       <NoteList notes={props.task.notes}/>
       <div className="task-note add-note">
         <i className="material-icons">add</i>
-        <p>Add note</p>
+        <input placeholder="Add note"></input>
       </div>
     </div>
   )

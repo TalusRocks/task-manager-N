@@ -17,6 +17,18 @@ p {
   margin: 0em;
 }
 
+input {
+  height: 2em;
+  width: 100%;
+  font-size: 1em;
+  padding-left: 5px;
+  margin-left: 5px;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
 .todo-color {
   background-color: rgba(3, 169, 244, 0.3);
 }

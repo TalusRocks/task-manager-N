@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom'
 import './styles/css/index.css'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
-import { createStore } from 'redux'
+import store from './store'
 import { Provider } from 'react-redux'
-import tasks from './reducers'
+import { fetchDbTasks } from './actions'
 
-const store = createStore(tasks)
+store.dispatch(fetchDbTasks())
 
 ReactDOM.render(
   <Provider store={store}>

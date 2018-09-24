@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Task from './Task'
 
-const TaskList = props => {
-  return (
-    <div className="all-tasks-container">
-      {props.tasks.map(task => {
-        return <Task key={task.taskId} task={task}/>
-      })}
-    </div>
-  )
+class TaskList extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
+  render() {
+    return (
+      <div className="all-tasks-container">
+        {this.props.tasks.map(task => {
+          return <Task key={task.taskId} task={task}/>
+        })}
+      </div>
+    )
+  }
 }
 
 export default TaskList
