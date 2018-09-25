@@ -7,8 +7,8 @@ const Task = props => {
       <div className="task-title"><h2>{props.task.title}</h2></div>
       <NoteList notes={props.task.notes}/>
       <div className="task-note">
-        <i className="material-icons btn-add">add</i>
-        <input placeholder="Add note"></input>
+        <input className="input-add-note" placeholder="Add note"></input>
+        <i className="material-icons btn-add-note">add</i>
       </div>
     </div>
   )
