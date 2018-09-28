@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { createTask } from './actions'
+import AddTaskInput from './components/AddTaskInput'
 import TaskList from './components/TaskList'
 
 class App extends Component {
+
+  onCreateTask = ({ title }) => {
+    console.log("this.props", this.props)
+    console.log("{title}", {title});
+    this.props.dispatch(createTask({ title }))
+  }
+
   render() {
     return (
       <div>
-        <div className="add-task-container">
-          <input className="input-add-task" placeholder="Add Task"></input>
-          <i className="material-icons btn-add-task">add</i>
-        </div>
-        <TaskList tasks={this.props.tasks}/>
+        <AddTaskInput onCreateTask={this.onCreateTask}/>
+        <TaskList allTasks={this.props.allTasks}/>
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    tasks: state.tasks
-  }
-}
+const mapStateToProps = state => ({
+  allTasks: state.allTasks
+})
 
-export default connect(mapStateToProps)(App);
+export default connect(
+  mapStateToProps
+)(App)

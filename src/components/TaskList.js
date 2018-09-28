@@ -10,7 +10,7 @@ class TaskList extends Component {
   render() {
     return (
       <div className="all-tasks-container">
-        {this.props.tasks.map(task => {
+        {this.props.allTasks.map(task => {
           return <Task key={task.taskId} task={task}/>
         })}
       </div>
