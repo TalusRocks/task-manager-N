@@ -27,17 +27,17 @@ class AddTaskInput extends Component {
     return (
       <div className="add-task-container">
         <form className="form-add-task">
-        <input
-          className="input-add-task"
-          onChange={this.onTitleChange}
-          value={this.state.title}
-          placeholder="Add Task"></input>
-
-        <button
-          className="btn-add-task"
-          onClick={this.onCreateTask}>
-          <i className="material-icons">add</i>
-        </button>
+          <input
+            className="input-add-task"
+            onChange={this.onTitleChange}
+            value={this.state.title}
+            placeholder="Add Task">
+          </input>
+          <button
+            className="btn-add-task"
+            onClick={this.onCreateTask}>
+            <i className="material-icons">add</i>
+          </button>
         </form>
       </div>
     )

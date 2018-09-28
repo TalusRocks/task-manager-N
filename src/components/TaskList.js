@@ -11,7 +11,7 @@ class TaskList extends Component {
     return (
       <div className="all-tasks-container">
         {this.props.allTasks.map(task => {
-          return <Task key={task.taskId} task={task}/>
+          return <Task key={task.taskId} task={task} onDeleteTask={this.props.onDeleteTask}/>
         })}
       </div>
     )

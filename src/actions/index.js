@@ -1,5 +1,6 @@
 export const FETCH_DB_TASKS = 'FETCH_DB_TASKS'
 export const CREATE_TASK = 'CREATE_TASK'
+export const DELETE_TASK = 'DELETE_TASK'
 
 const baseURL = `https://2ivd6dxaqj.execute-api.us-west-2.amazonaws.com/latest`
 
@@ -33,6 +34,23 @@ export function createTask(task) {
       })
     } else {
       throw new Error('Could not create new task')
+    }
+  }
+}
+
+export function deleteTask(taskId) {
+  return async(dispatch) => {
+    const data = await fetch(`${baseURL}/tasks/${taskId}`, {
+      method: 'DELETE'
+    })
+    
+    if(data.ok){
+      dispatch({
+        type: DELETE_TASK,
+        payload: taskId
+      })
+    } else {
+      throw new Error('Could not delete task')
     }
   }
 }
