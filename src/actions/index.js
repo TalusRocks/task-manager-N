@@ -16,7 +16,6 @@ export function fetchDbTasks() {
 
 export function createTask(task) {
   // task = {title: "string"}
-  console.log("task", task);
   return async(dispatch) => {
     const data = await fetch(`${baseURL}/tasks`, {
       method: 'POST',
@@ -28,7 +27,6 @@ export function createTask(task) {
     const json = await data.json()
 
     if(data.ok){
-      console.log("json payload", json);
       dispatch({
         type: CREATE_TASK,
         payload: json

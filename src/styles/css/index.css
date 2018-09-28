@@ -93,6 +93,11 @@ p {
   height: 100px;
 }
 
+.form-add-task {
+  display: flex;
+  align-items: center;
+}
+
 input {
   height: 2em;
   width: 100%;
@@ -102,9 +107,7 @@ input {
 }
 
 .input-add-task {
-  display: flex;
-  justify-content: center;
-  width: 30%;
+  width: 400px;
   text-align: center;
   border: 0px;
   font-size: 1.2em;
@@ -117,6 +120,7 @@ input {
   border-radius: 3px;
   padding: 7px;
   margin-left: 10px;
+  border: 0px;
 }
 
 .input-add-note {

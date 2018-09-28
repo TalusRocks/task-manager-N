@@ -9,7 +9,6 @@ export default function allTasks(state = { allTasks: [] }, action) {
         allTasks: action.payload
       }
     case CREATE_TASK:
-    console.log("action.payload", action.payload);
       return {
         ...state,
         allTasks: state.allTasks.concat(action.payload)

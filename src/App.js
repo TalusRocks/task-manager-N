@@ -7,8 +7,6 @@ import TaskList from './components/TaskList'
 class App extends Component {
 
   onCreateTask = ({ title }) => {
-    console.log("this.props", this.props)
-    console.log("{title}", {title});
     this.props.dispatch(createTask({ title }))
   }
 

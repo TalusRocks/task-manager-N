@@ -26,15 +26,19 @@ class AddTaskInput extends Component {
   render() {
     return (
       <div className="add-task-container">
+        <form className="form-add-task">
         <input
           className="input-add-task"
           onChange={this.onTitleChange}
           value={this.state.title}
           placeholder="Add Task"></input>
-        <i
-          className="material-icons btn-add-task"
-          onClick={this.onCreateTask}
-          >add</i>
+
+        <button
+          className="btn-add-task"
+          onClick={this.onCreateTask}>
+          <i className="material-icons">add</i>
+        </button>
+        </form>
       </div>
     )
   }
