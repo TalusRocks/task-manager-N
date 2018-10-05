@@ -34,9 +34,8 @@ class AddTaskInput extends Component {
             placeholder="Add Task">
           </input>
           <button
-            className="btn-add-task"
+            className="btn-submit-hidden"
             onClick={this.onCreateTask}>
-            <i className="material-icons">add</i>
           </button>
         </form>
       </div>

@@ -155,4 +155,8 @@ input {
   margin-left: 5px;
 }
 
+.btn-submit-hidden {
+  display: none;
+}
+
 /*# sourceMappingURL=index.css.map */

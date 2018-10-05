@@ -1,5 +1,5 @@
 // import { combineReducers } from 'redux'
-import { FETCH_DB_TASKS, CREATE_TASK, DELETE_TASK } from '../actions'
+import { FETCH_DB_TASKS, CREATE_TASK, DELETE_TASK, CREATE_NOTE } from '../actions'
 
 export default function allTasks(state = { allTasks: [] }, action) {
   switch (action.type) {
@@ -20,6 +20,17 @@ export default function allTasks(state = { allTasks: [] }, action) {
       return {
         ...state,
         allTasks: remainingTasks
+      }
+    case CREATE_NOTE:
+      let updatedTasks = state.allTasks.map(el => {
+        if (el.taskId === action.payload.Attributes.taskId) {
+          el = action.payload.Attributes
+        }
+        return el
+      })
+      return {
+        ...state,
+        allTasks: updatedTasks
       }
     default:
       return state
