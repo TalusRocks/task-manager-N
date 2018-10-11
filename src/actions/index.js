@@ -57,11 +57,12 @@ export function deleteTask(taskId) {
 }
 
 export function createNote(note) {
-  // note = {text: "string", taskId: "string"}
+  // note = {text: "string", status: "string", taskId: "string"}
+  console.log("note --->", note);
   let tempSchema = {
     noteId: '',
     text: note.text,
-    status: 'TEMPSTATUS'
+    status: note.status
   }
   console.log("note:", note);
   return async(dispatch) => {

@@ -14,8 +14,8 @@ class App extends Component {
     this.props.dispatch(deleteTask(taskId))
   }
 
-  onCreateNote = ({ text, taskId }) => {
-    this.props.dispatch(createNote({ text, taskId }))
+  onCreateNote = ({ text, status, taskId }) => {
+    this.props.dispatch(createNote({ text, status, taskId }))
   }
 
   render() {
