@@ -20,7 +20,7 @@ class Task extends Component {
             className="material-icons icon-delete"
             onClick={this.onDeleteTask}
             id={this.props.task.taskId}
-            >delete
+            >close
           </i>
         </div>
         <NoteList notes={this.props.task.notes}/>

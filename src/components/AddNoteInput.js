@@ -35,7 +35,7 @@ class AddNoteInput extends Component {
           >
         </input>
         <button
-          className="btn-submit-hidden"
+          className="hide"
           onClick={this.onCreateNote}
           >
         </button>
