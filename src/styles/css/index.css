@@ -30,29 +30,30 @@ p {
 
 .material-icons {
   cursor: pointer;
+  user-select: none;
 }
 
-.todo-color {
+.TODO-color {
   background-color: rgba(3, 169, 244, 0.3);
 }
 
-.todo-icon {
+.TODO-icon {
   color: #03a9f4;
 }
 
-.question-color {
+.QUESTION-color {
   background-color: rgba(255, 235, 59, 0.3);
 }
 
-.question-icon {
+.QUESTION-icon {
   color: #FFC107;
 }
 
-.blocked-color {
+.BLOCKED-color {
   background-color: rgba(255, 152, 0, 0.3);
 }
 
-.blocked-icon {
+.BLOCKED-icon {
   color: #ff9800;
 }
 

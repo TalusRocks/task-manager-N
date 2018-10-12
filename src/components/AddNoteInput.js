@@ -48,7 +48,7 @@ class AddNoteInput extends Component {
     return (
       <form className="task-note">
         <i
-          className="material-icons todo-icon"
+          className="material-icons"
           onClick={this.toggleStatus}
         >{this.state.status}</i>
         <input

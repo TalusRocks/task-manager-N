@@ -13,9 +13,11 @@ class Note extends Component {
   }
 
   render() {
+    let statusKey = Object.keys(status).find(key => status[key] == this.props.status)
+
     return (
-      <div className="task-note todo-color">
-        <i className={`material-icons todo-icon`}>{this.props.status}</i>
+      <div className={`task-note ${statusKey}-color`}>
+        <i className={`material-icons ${statusKey}-icon`}>{this.props.status}</i>
         <p>{this.props.text}</p>
         <i className="material-icons icon-delete icon-delete-note">close</i>
       </div>
