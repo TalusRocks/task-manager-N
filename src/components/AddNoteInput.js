@@ -35,11 +35,11 @@ class AddNoteInput extends Component {
   }
 
   toggleStatus = (e) => {
-    if (this.state.status == status.TODO){
+    if (this.state.status === status.TODO){
       this.setState({ status: status.QUESTION})
-    } else if (this.state.status == status.QUESTION) {
+    } else if (this.state.status === status.QUESTION) {
       this.setState({ status: status.BLOCKED})
-    } else if (this.state.status == status.BLOCKED) {
+    } else if (this.state.status === status.BLOCKED) {
       this.setState({ status: status.TODO})
     }
   }

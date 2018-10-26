@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { createTask, deleteTask, createNote } from './actions'
+import { createTask, deleteTask, createNote, deleteNote } from './actions'
 import AddTaskInput from './components/AddTaskInput'
 import TaskList from './components/TaskList'
 
@@ -18,6 +18,10 @@ class App extends Component {
     this.props.dispatch(createNote({ text, status, taskId }))
   }
 
+  onDeleteNote = ( taskId, noteId ) => {
+    this.props.dispatch(deleteNote(taskId, noteId))
+  }
+
   render() {
     return (
       <div>
@@ -26,6 +30,7 @@ class App extends Component {
           allTasks={this.props.allTasks}
           onDeleteTask={this.onDeleteTask}
           onCreateNote={this.onCreateNote}
+          onDeleteNote={this.onDeleteNote}
         />
       </div>
     );

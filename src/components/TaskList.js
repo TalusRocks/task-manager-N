@@ -16,6 +16,7 @@ class TaskList extends Component {
             task={task}
             onDeleteTask={this.props.onDeleteTask}
             onCreateNote={this.props.onCreateNote}
+            onDeleteNote={this.props.onDeleteNote}
             />
         })}
       </div>

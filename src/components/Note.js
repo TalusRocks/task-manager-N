@@ -12,14 +12,20 @@ class Note extends Component {
     this.state = {}
   }
 
-  render() {
-    let statusKey = Object.keys(status).find(key => status[key] == this.props.status)
+  deleteNote = (e) => {
+    this.props.onDeleteNote(this.props.taskId, e.target.id)
+  }
 
+  render() {
+    let statusKey = Object.keys(status).find(key => status[key] === this.props.status)
     return (
       <div className={`task-note ${statusKey}-color`}>
         <i className={`material-icons ${statusKey}-icon`}>{this.props.status}</i>
         <p>{this.props.text}</p>
-        <i className="material-icons icon-delete icon-delete-note">close</i>
+        <i className="material-icons icon-delete icon-delete-note"
+          id={this.props.id}
+          onClick={this.deleteNote}
+          >close</i>
       </div>
     )
   }

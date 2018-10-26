@@ -5,7 +5,13 @@ const NoteList = props => {
   return (
     <div>
       {props.notes.map(note => {
-        return <Note key={note.noteId} text={note.text} status={note.status}/>
+        return <Note key={note.noteId}
+          id={note.noteId}
+          text={note.text}
+          status={note.status}
+          taskId={props.taskId}
+          onDeleteNote={props.onDeleteNote}
+          />
       })}
     </div>
   )
