@@ -2,12 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { deleteNote } from '../actions'
-
-const status = {
-  TODO: 'arrow_right_alt',
-  QUESTION: 'help',
-  BLOCKED: 'block'
-}
+import { status } from '../constants'
 
 class Note extends Component {
   constructor(props) {

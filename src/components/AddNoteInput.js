@@ -2,12 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { createNote } from '../actions'
-
-const status = {
-  TODO: 'arrow_right_alt',
-  QUESTION: 'help',
-  BLOCKED: 'block'
-}
+import { status } from '../constants'
 
 class AddNoteInput extends Component {
   constructor(props) {
@@ -48,10 +43,11 @@ class AddNoteInput extends Component {
   }
 
   render() {
+    let statusKey = Object.keys(status).find(key => status[key] === this.state.status)
     return (
       <form className="task-note">
         <i
-          className="material-icons"
+          className={`material-icons ${statusKey}-icon`}
           onClick={this.toggleStatus}
         >{this.state.status}</i>
         <input
