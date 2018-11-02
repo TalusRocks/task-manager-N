@@ -9,17 +9,13 @@ class App extends Component {
     return (
       <div>
         <AddTaskInput/>
-        <TaskList
-          allTasks={this.props.allTasks}
-        />
+        <TaskList/>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  allTasks: state.allTasks
-})
+const mapStateToProps = state => ({})
 
 const mapDispatchToProps = state => ({})
 
