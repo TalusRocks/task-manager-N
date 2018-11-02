@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { createTask } from '../actions'
 
 class AddTaskInput extends Component {
   constructor(props) {
@@ -14,8 +17,8 @@ class AddTaskInput extends Component {
 
   onCreateTask = (e) => {
     e.preventDefault()
-    // call function that dispatches ACTION
-    this.props.onCreateTask({ title: this.state.title })
+    // dispatch ACTION
+    this.props.createTask({ title: this.state.title })
     this.resetForm()
   }
 
@@ -43,4 +46,13 @@ class AddTaskInput extends Component {
   }
 }
 
-export default AddTaskInput
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ createTask }, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AddTaskInput)

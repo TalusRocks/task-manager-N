@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { createTask, deleteTask, createNote, deleteNote } from './actions'
+import { createNote, deleteNote } from './actions'
 import AddTaskInput from './components/AddTaskInput'
 import TaskList from './components/TaskList'
 
 class App extends Component {
-
-  onCreateTask = ({ title }) => {
-    this.props.dispatch(createTask({ title }))
-  }
-
-  onDeleteTask = (taskId) => {
-    this.props.dispatch(deleteTask(taskId))
-  }
 
   onCreateNote = ({ text, status, taskId }) => {
     this.props.dispatch(createNote({ text, status, taskId }))
@@ -25,10 +17,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <AddTaskInput onCreateTask={this.onCreateTask}/>
+        <AddTaskInput/>
         <TaskList
           allTasks={this.props.allTasks}
-          onDeleteTask={this.onDeleteTask}
           onCreateNote={this.onCreateNote}
           onDeleteNote={this.onDeleteNote}
         />
@@ -41,6 +32,9 @@ const mapStateToProps = state => ({
   allTasks: state.allTasks
 })
 
+const mapDispatchToProps = state => ({})
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(App)

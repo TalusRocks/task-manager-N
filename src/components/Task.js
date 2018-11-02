@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { deleteTask } from '../actions'
 import NoteList from './NoteList'
 import AddNoteInput from './AddNoteInput'
 
 class Task extends Component {
 
   onDeleteTask = (e) => {
-    this.props.onDeleteTask(e.target.id)
+    this.props.deleteTask(e.target.id)
   }
 
   render() {
@@ -37,4 +40,13 @@ class Task extends Component {
   }
 }
 
-export default Task
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ deleteTask }, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Task)

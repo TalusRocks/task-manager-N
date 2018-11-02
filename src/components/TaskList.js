@@ -14,7 +14,6 @@ class TaskList extends Component {
           return <Task
             key={task.taskId}
             task={task}
-            onDeleteTask={this.props.onDeleteTask}
             onCreateNote={this.props.onCreateNote}
             onDeleteNote={this.props.onDeleteNote}
             />
