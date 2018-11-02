@@ -10,7 +10,6 @@ const NoteList = props => {
           text={note.text}
           status={note.status}
           taskId={props.taskId}
-          onDeleteNote={props.onDeleteNote}
           />
       })}
     </div>

@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { deleteNote } from '../actions'
 
 const status = {
   TODO: 'arrow_right_alt',
@@ -13,7 +16,7 @@ class Note extends Component {
   }
 
   deleteNote = (e) => {
-    this.props.onDeleteNote(this.props.taskId, e.target.id)
+    this.props.deleteNote(this.props.taskId, e.target.id)
   }
 
   render() {
@@ -31,4 +34,13 @@ class Note extends Component {
   }
 }
 
-export default Note;
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ deleteNote }, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Note)

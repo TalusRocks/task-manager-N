@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { createNote } from '../actions'
 
 const status = {
   TODO: 'arrow_right_alt',
@@ -22,7 +25,7 @@ class AddNoteInput extends Component {
 
   onCreateNote = (e) => {
     e.preventDefault()
-    this.props.onCreateNote({
+    this.props.createNote({
       text: this.state.text,
       status: this.state.status,
       taskId: this.props.id
@@ -68,4 +71,13 @@ class AddNoteInput extends Component {
   }
 }
 
-export default AddNoteInput
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ createNote }, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AddNoteInput)

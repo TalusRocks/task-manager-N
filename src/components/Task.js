@@ -29,12 +29,8 @@ class Task extends Component {
         <NoteList
           notes={this.props.task.notes}
           taskId={this.props.task.taskId}
-          onDeleteNote={this.props.onDeleteNote}
           />
-        <AddNoteInput
-          onCreateNote={this.props.onCreateNote}
-          id={this.props.task.taskId}
-          />
+        <AddNoteInput id={this.props.task.taskId} />
       </div>
     )
   }
